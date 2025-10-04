@@ -48,7 +48,7 @@ export default function Home() {
             <CardContent className="pt-6">
               <p className="text-lg text-gray-300 leading-relaxed">
                 My journey in software development began with a curiosity for how technology shapes our world.
-                As a Computer Science student at UPEI, I've transformed that curiosity into practical skills,
+                As a Computer Science student at UPEI, I&apos;ve transformed that curiosity into practical skills,
                 building real-world applications that solve meaningful problems. From creating an AI-powered
                 numerology app with full payment integration to developing websites for local businesses,
                 each project has expanded my expertise in full-stack development. I specialize in the modern

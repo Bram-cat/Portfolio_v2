@@ -7,7 +7,12 @@
       "Bash(dir:*)",
       "Bash(npx shadcn@latest add:*)",
       "Bash(del components.json)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nBuild professional portfolio website with black theme\n\n- Added shadcn/ui components (Button, Card, Badge)\n- Implemented black background with white accents for modern design\n- Created hero section with profile picture and introduction\n- Added journey section describing developer background and skills\n- Built education section highlighting UPEI Computer Science degree\n- Showcased three major projects: Lovelock AI app, Fadez Barbershop, and previous Portfolio\n- Integrated tech stack badges and GitHub/external links for each project\n- Installed lucide-react for icons and proper UI components\n- Updated metadata for SEO optimization\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "Bash(git branch:*)",
+      "Bash(git remote add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
