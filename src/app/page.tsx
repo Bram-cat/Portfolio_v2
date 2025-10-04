@@ -1,324 +1,295 @@
 import Image from "next/image";
-import { Github, ExternalLink, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, ExternalLink, Linkedin, Mail, MapPin, Building2, BookOpen, Star, GitFork } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white">
-      {/* Animated background gradient */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-purple-900/20 via-transparent to-transparent animate-pulse blur-3xl" />
-        <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-tl from-blue-900/20 via-transparent to-transparent animate-pulse blur-3xl" style={{ animationDelay: '1s' }} />
-      </div>
-
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center">
-        <div className="max-w-7xl mx-auto px-6 py-20">
-          <div className="text-center space-y-8">
-            {/* Profile Image with glow effect */}
-            <div className="relative inline-block">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur-2xl opacity-50 animate-pulse" />
-              <div className="relative w-40 h-40 rounded-full overflow-hidden border-2 border-white/20 shadow-2xl">
-                <Image
-                  src="/pfp.png"
-                  alt="Profile"
-                  width={160}
-                  height={160}
-                  className="w-full h-full object-cover"
-                  priority
-                />
+    <div className="min-h-screen bg-[#0d1117] text-[#c9d1d9]">
+      {/* GitHub-style header */}
+      <header className="border-b border-[#30363d] bg-[#0d1117] sticky top-0 z-50">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center gap-4">
+              <div className="w-8 h-8 rounded-full overflow-hidden border border-[#30363d]">
+                <Image src="/pfp.png" alt="Profile" width={32} height={32} className="w-full h-full object-cover" />
               </div>
+              <h1 className="text-xl font-semibold text-[#f0f6fc]">Portfolio</h1>
             </div>
-
-            {/* Main heading with gradient text */}
-            <div className="space-y-4">
-              <h1 className="text-6xl sm:text-8xl font-black tracking-tight">
-                <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
-                  Full Stack
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  Developer
-                </span>
-              </h1>
-
-              <p className="text-xl sm:text-2xl text-gray-400 font-light">
-                Computer Science @ UPEI
-              </p>
-
-              {/* Catchy motto */}
-              <p className="text-2xl sm:text-3xl font-medium text-gray-300 italic max-w-3xl mx-auto pt-4">
-                &ldquo;Turning ideas into elegant code, one commit at a time&rdquo;
-              </p>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex gap-4 justify-center pt-8">
-              <Button
-                variant="outline"
-                size="icon"
-                className="rounded-full border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/40 transition-all"
-                asChild
-              >
+            <nav className="flex items-center gap-4">
+              <Button variant="ghost" size="sm" className="text-[#c9d1d9] hover:text-[#f0f6fc] hover:bg-[#30363d]" asChild>
                 <a href="https://github.com/Bram-cat" target="_blank" rel="noopener noreferrer">
                   <Github className="h-5 w-5" />
                 </a>
               </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="rounded-full border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/40 transition-all"
-                asChild
-              >
+              <Button variant="ghost" size="sm" className="text-[#c9d1d9] hover:text-[#f0f6fc] hover:bg-[#30363d]" asChild>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-5 w-5" />
                 </a>
               </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="rounded-full border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/40 transition-all"
-                asChild
-              >
-                <a href="mailto:your.email@example.com">
-                  <Mail className="h-5 w-5" />
-                </a>
-              </Button>
-            </div>
+            </nav>
+          </div>
+        </div>
+      </header>
 
-            {/* Scroll indicator */}
-            <div className="pt-16 animate-bounce">
-              <div className="w-6 h-10 border-2 border-white/30 rounded-full mx-auto flex items-start justify-center p-2">
-                <div className="w-1.5 h-3 bg-white/50 rounded-full" />
+      {/* Main Content */}
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Profile Section - GitHub style */}
+        <div className="flex flex-col md:flex-row gap-6 mb-8">
+          {/* Left Sidebar */}
+          <div className="md:w-[296px] flex-shrink-0">
+            <div className="sticky top-20">
+              <div className="relative">
+                <Image
+                  src="/pfp.png"
+                  alt="Profile"
+                  width={296}
+                  height={296}
+                  className="w-full rounded-full border border-[#30363d]"
+                  priority
+                />
+              </div>
+              <div className="mt-4">
+                <h1 className="text-2xl font-semibold text-[#f0f6fc]">Full Stack Developer</h1>
+                <p className="text-xl text-[#7d8590] mt-1">Bram</p>
+              </div>
+              <p className="mt-4 text-[#c9d1d9]">
+                Turning ideas into elegant code, one commit at a time
+              </p>
+
+              {/* Info */}
+              <div className="mt-4 space-y-2 text-sm text-[#7d8590]">
+                <div className="flex items-center gap-2">
+                  <Building2 className="h-4 w-4" />
+                  <span>University of Prince Edward Island</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <BookOpen className="h-4 w-4" />
+                  <span>Computer Science Student</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="h-4 w-4" />
+                  <a href="mailto:your.email@example.com" className="hover:text-[#58a6ff] hover:underline">
+                    Contact me
+                  </a>
+                </div>
+              </div>
+
+              {/* Social buttons - GitHub style */}
+              <div className="mt-4 flex gap-2">
+                <Button
+                  size="sm"
+                  className="flex-1 bg-[#21262d] hover:bg-[#30363d] text-[#c9d1d9] border border-[#30363d]"
+                  asChild
+                >
+                  <a href="https://github.com/Bram-cat" target="_blank" rel="noopener noreferrer">
+                    <Github className="h-4 w-4 mr-2" />
+                    GitHub
+                  </a>
+                </Button>
+                <Button
+                  size="sm"
+                  className="flex-1 bg-[#21262d] hover:bg-[#30363d] text-[#c9d1d9] border border-[#30363d]"
+                  asChild
+                >
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="h-4 w-4 mr-2" />
+                    LinkedIn
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* About Section */}
-      <section className="relative py-32 px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl sm:text-6xl font-black mb-12 text-center">
-            <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-              About Me
-            </span>
-          </h2>
-
-          <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
-            <p className="text-xl">
-              My journey in software development began with a curiosity for how technology shapes our world.
-              As a Computer Science student at UPEI, I&apos;ve transformed that curiosity into practical skills,
-              building real-world applications that solve meaningful problems.
-            </p>
-            <p>
-              From creating an AI-powered numerology app with full payment integration to developing websites
-              for local businesses, each project has expanded my expertise in full-stack development. I specialize
-              in the modern JavaScript ecosystem—React Native for mobile, Next.js for web, with robust backends
-              using Supabase and authentication via Clerk.
-            </p>
-            <p className="text-xl font-semibold text-white">
-              My focus is on creating seamless user experiences while maintaining clean, scalable code.
-            </p>
-          </div>
-
-          {/* Education badge */}
-          <div className="mt-12 p-6 rounded-2xl bg-gradient-to-br from-purple-900/20 to-blue-900/20 border border-purple-500/20">
-            <div className="flex items-center gap-4">
-              <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
-              <div>
-                <p className="text-sm text-gray-400">Currently pursuing</p>
-                <p className="text-xl font-bold text-white">Bachelor of Science in Computer Science</p>
-                <p className="text-gray-300">University of Prince Edward Island (UPEI)</p>
+          {/* Main Content Area */}
+          <div className="flex-1 min-w-0">
+            {/* About Section */}
+            <section className="mb-6">
+              <h2 className="text-xl font-semibold text-[#f0f6fc] mb-4 pb-2 border-b border-[#21262d]">
+                About
+              </h2>
+              <div className="text-[#c9d1d9] space-y-3 text-[15px] leading-relaxed">
+                <p>
+                  My journey in software development began with a curiosity for how technology shapes our world.
+                  As a Computer Science student at UPEI, I&apos;ve transformed that curiosity into practical skills,
+                  building real-world applications that solve meaningful problems.
+                </p>
+                <p>
+                  I specialize in the modern JavaScript ecosystem—React Native for mobile, Next.js for web,
+                  with robust backends using Supabase and authentication via Clerk. My focus is on creating
+                  seamless user experiences while maintaining clean, scalable code.
+                </p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            </section>
 
-      {/* Projects Section */}
-      <section className="relative py-32 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl sm:text-6xl font-black mb-6 text-center">
-            <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-              Featured Work
-            </span>
-          </h2>
-          <p className="text-center text-gray-400 mb-20 text-lg">
-            Building experiences that matter
-          </p>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Lovelock Project - Featured */}
-            <div className="lg:col-span-2 group relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-900/40 via-gray-900/40 to-blue-900/40 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-500 hover:scale-[1.02]">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-              <div className="relative p-8 sm:p-12">
-                <div className="flex items-start justify-between mb-6">
+            {/* Education */}
+            <section className="mb-6">
+              <h2 className="text-xl font-semibold text-[#f0f6fc] mb-4 pb-2 border-b border-[#21262d]">
+                Education
+              </h2>
+              <div className="bg-[#161b22] border border-[#30363d] rounded-md p-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-12 h-12 rounded bg-[#21262d] flex items-center justify-center flex-shrink-0">
+                    <BookOpen className="h-6 w-6 text-[#58a6ff]" />
+                  </div>
                   <div>
-                    <Badge className="mb-4 bg-purple-500/20 text-purple-300 border-purple-500/30">Featured Project</Badge>
-                    <h3 className="text-3xl sm:text-4xl font-bold text-white mb-2">Lovelock</h3>
-                    <p className="text-xl text-purple-300 font-medium italic">
-                      &ldquo;Where AI meets mysticism—numerology reimagined&rdquo;
-                    </p>
+                    <h3 className="text-[#f0f6fc] font-semibold">Bachelor of Science in Computer Science</h3>
+                    <p className="text-[#7d8590] text-sm mt-1">University of Prince Edward Island (UPEI)</p>
+                    <Badge className="mt-2 bg-[#1f6feb]/10 text-[#58a6ff] border-[#1f6feb]/20">Currently pursuing</Badge>
                   </div>
                 </div>
+              </div>
+            </section>
 
-                <p className="text-gray-300 mb-6 text-lg leading-relaxed">
-                  A comprehensive AI-powered numerology app that combines ancient wisdom with modern technology.
-                  Complete payment integration, authentication, and cross-platform compatibility. From mobile app
-                  to payment website—a full-stack masterpiece.
-                </p>
+            {/* Pinned Projects - GitHub style */}
+            <section className="mb-6">
+              <h2 className="text-xl font-semibold text-[#f0f6fc] mb-4 pb-2 border-b border-[#21262d]">
+                Pinned Projects
+              </h2>
 
-                <div className="mb-8">
-                  <div className="flex flex-wrap gap-2">
-                    {["React Native", "Clerk", "Supabase", "Stripe", "TypeScript", "Next.js"].map((tech) => (
-                      <Badge key={tech} variant="outline" className="border-purple-400/30 text-purple-200 bg-purple-500/10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                {/* Lovelock */}
+                <div className="bg-[#161b22] border border-[#30363d] rounded-md p-4 hover:border-[#58a6ff] transition-colors">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex-shrink-0">
+                      <Image src="/lovelock.png" alt="Lovelock" width={48} height={48} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-[#58a6ff] font-semibold hover:underline">
+                        <a href="https://github.com/Bram-cat/lovelock" target="_blank" rel="noopener noreferrer">
+                          Lovelock
+                        </a>
+                      </h3>
+                      <p className="text-[#7d8590] text-xs mt-0.5">Public</p>
+                    </div>
+                  </div>
+
+                  <p className="text-[#c9d1d9] text-sm mb-3 leading-relaxed">
+                    AI-powered numerology app with full payment integration. React Native mobile app with Next.js payment website.
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {["React Native", "TypeScript", "Clerk", "Supabase", "Stripe"].map((tech) => (
+                      <Badge key={tech} variant="outline" className="text-xs bg-[#1f6feb]/10 text-[#58a6ff] border-[#1f6feb]/20">
                         {tech}
                       </Badge>
                     ))}
                   </div>
+
+                  <div className="flex items-center gap-4 text-xs text-[#7d8590]">
+                    <div className="flex items-center gap-1">
+                      <Star className="h-3.5 w-3.5" />
+                      <span>Featured</span>
+                    </div>
+                    <a href="https://github.com/Bram-cat/lovelock" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#58a6ff]">
+                      <Github className="h-3.5 w-3.5" />
+                      <span>View Code</span>
+                    </a>
+                    <a href="https://lovelock.it.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#58a6ff]">
+                      <ExternalLink className="h-3.5 w-3.5" />
+                      <span>Live Site</span>
+                    </a>
+                  </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <Button asChild className="bg-white text-black hover:bg-gray-200 group/btn">
-                    <a href="https://github.com/Bram-cat/lovelock" target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4 group-hover/btn:rotate-12 transition-transform" />
-                      View Code
-                    </a>
-                  </Button>
-                  <Button asChild variant="outline" className="border-white/20 text-white hover:bg-white hover:text-black">
-                    <a href="https://lovelock.it.com" target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Live Site
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </div>
+                {/* Fadez Barbershop */}
+                <div className="bg-[#161b22] border border-[#30363d] rounded-md p-4 hover:border-[#58a6ff] transition-colors">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex-shrink-0">
+                      <Image src="/fadezlogo.png" alt="Fadez" width={48} height={48} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-[#58a6ff] font-semibold hover:underline">
+                        <a href="https://github.com/Bram-cat/fadez-new1" target="_blank" rel="noopener noreferrer">
+                          Fadez Barbershop
+                        </a>
+                      </h3>
+                      <p className="text-[#7d8590] text-xs mt-0.5">Public</p>
+                    </div>
+                  </div>
 
-            {/* Fadez Barbershop */}
-            <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-900/80 to-gray-800/80 border border-gray-700 hover:border-blue-500/50 transition-all duration-500 hover:scale-[1.02]">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/0 to-cyan-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <p className="text-[#c9d1d9] text-sm mb-3 leading-relaxed">
+                    Modern, responsive website for a local barbershop. Performance-first design with stunning visuals and smooth UX.
+                  </p>
 
-              <div className="relative p-8">
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">Fadez Barbershop</h3>
-                <p className="text-lg text-blue-300 font-medium italic mb-4">
-                  &ldquo;Style meets code—digital excellence for local business&rdquo;
-                </p>
-
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  A sleek, modern website bringing a local barbershop into the digital age.
-                  Performance-first design with stunning visuals and smooth UX.
-                </p>
-
-                <div className="mb-6">
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-3">
                     {["Vite", "React", "Tailwind CSS"].map((tech) => (
-                      <Badge key={tech} variant="outline" className="border-blue-400/30 text-blue-200 bg-blue-500/10">
+                      <Badge key={tech} variant="outline" className="text-xs bg-[#1f6feb]/10 text-[#58a6ff] border-[#1f6feb]/20">
                         {tech}
                       </Badge>
                     ))}
                   </div>
+
+                  <div className="flex items-center gap-4 text-xs text-[#7d8590]">
+                    <a href="https://github.com/Bram-cat/fadez-new1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#58a6ff]">
+                      <Github className="h-3.5 w-3.5" />
+                      <span>View Code</span>
+                    </a>
+                  </div>
                 </div>
 
-                <Button asChild className="bg-white text-black hover:bg-gray-200 group/btn">
-                  <a href="https://github.com/Bram-cat/fadez-new1" target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4 group-hover/btn:rotate-12 transition-transform" />
-                    View Code
-                  </a>
-                </Button>
-              </div>
-            </div>
+                {/* Portfolio v1 */}
+                <div className="bg-[#161b22] border border-[#30363d] rounded-md p-4 hover:border-[#58a6ff] transition-colors">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-full overflow-hidden bg-[#21262d] flex-shrink-0 flex items-center justify-center">
+                      <BookOpen className="h-6 w-6 text-[#58a6ff]" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-[#58a6ff] font-semibold hover:underline">
+                        <a href="https://github.com/Bram-cat/Portfolio" target="_blank" rel="noopener noreferrer">
+                          Portfolio v1
+                        </a>
+                      </h3>
+                      <p className="text-[#7d8590] text-xs mt-0.5">Public</p>
+                    </div>
+                  </div>
 
-            {/* Portfolio v1 */}
-            <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-900/80 to-gray-800/80 border border-gray-700 hover:border-cyan-500/50 transition-all duration-500 hover:scale-[1.02]">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/0 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <p className="text-[#c9d1d9] text-sm mb-3 leading-relaxed">
+                    First portfolio showcasing web development fundamentals. A testament to growth and continuous learning.
+                  </p>
 
-              <div className="relative p-8">
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">Portfolio v1</h3>
-                <p className="text-lg text-cyan-300 font-medium italic mb-4">
-                  &ldquo;Where it all began—the foundation of my journey&rdquo;
-                </p>
-
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  My first portfolio showcasing the fundamentals of web development.
-                  A testament to growth and continuous learning.
-                </p>
-
-                <div className="mb-6">
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-3">
                     {["HTML", "CSS", "JavaScript"].map((tech) => (
-                      <Badge key={tech} variant="outline" className="border-cyan-400/30 text-cyan-200 bg-cyan-500/10">
+                      <Badge key={tech} variant="outline" className="text-xs bg-[#1f6feb]/10 text-[#58a6ff] border-[#1f6feb]/20">
                         {tech}
                       </Badge>
                     ))}
                   </div>
-                </div>
 
-                <Button asChild className="bg-white text-black hover:bg-gray-200 group/btn">
-                  <a href="https://github.com/Bram-cat/Portfolio" target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4 group-hover/btn:rotate-12 transition-transform" />
-                    View Code
-                  </a>
-                </Button>
+                  <div className="flex items-center gap-4 text-xs text-[#7d8590]">
+                    <a href="https://github.com/Bram-cat/Portfolio" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#58a6ff]">
+                      <Github className="h-3.5 w-3.5" />
+                      <span>View Code</span>
+                    </a>
+                  </div>
+                </div>
               </div>
-            </div>
+            </section>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Footer */}
-      <footer className="relative py-16 px-6 border-t border-gray-800">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div>
-            <h3 className="text-3xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-              Let&apos;s Build Something Amazing
-            </h3>
-            <p className="text-gray-400 text-lg">
-              Always open to new opportunities and collaborations
-            </p>
-          </div>
-
-          <div className="flex gap-4 justify-center">
-            <Button
-              variant="outline"
-              size="icon"
-              className="rounded-full border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/40 transition-all hover:scale-110"
-              asChild
-            >
-              <a href="https://github.com/Bram-cat" target="_blank" rel="noopener noreferrer">
-                <Github className="h-5 w-5" />
+      {/* Footer - GitHub style */}
+      <footer className="border-t border-[#30363d] mt-12">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#7d8590]">
+            <div className="flex items-center gap-4">
+              <span>© {new Date().getFullYear()} Bram</span>
+              <span className="hidden md:inline">•</span>
+              <span className="text-[#58a6ff] hover:underline cursor-pointer">Built with Next.js & Tailwind CSS</span>
+            </div>
+            <div className="flex items-center gap-4">
+              <a href="https://github.com/Bram-cat" target="_blank" rel="noopener noreferrer" className="hover:text-[#58a6ff] hover:underline">
+                GitHub
               </a>
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              className="rounded-full border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/40 transition-all hover:scale-110"
-              asChild
-            >
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="h-5 w-5" />
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#58a6ff] hover:underline">
+                LinkedIn
               </a>
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              className="rounded-full border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/40 transition-all hover:scale-110"
-              asChild
-            >
-              <a href="mailto:your.email@example.com">
-                <Mail className="h-5 w-5" />
+              <a href="mailto:your.email@example.com" className="hover:text-[#58a6ff] hover:underline">
+                Contact
               </a>
-            </Button>
-          </div>
-
-          <div className="pt-8 border-t border-gray-800">
-            <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} • Built with Next.js, Tailwind CSS, and shadcn/ui
-            </p>
+            </div>
           </div>
         </div>
       </footer>
