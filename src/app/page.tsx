@@ -5,15 +5,16 @@ import { Github, ExternalLink, Linkedin, Mail, ArrowRight, Sparkles, Terminal, R
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [currentText, setCurrentText] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+  const [showCursor, setShowCursor] = useState(true);
 
-  const texts = ["Bram", "an AI Developer", "a Full Stack Developer", "a Passionate Developer"];
+  const texts = useMemo(() => ["Bram", "an AI Developer", "a Full Stack Developer", "a Passionate Developer"], []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -23,20 +24,31 @@ export default function Home() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  // Blinking cursor effect
+  useEffect(() => {
+    const cursorInterval = setInterval(() => {
+      setShowCursor((prev) => !prev);
+    }, 530); // Blink every 530ms for natural cursor effect
+
+    return () => clearInterval(cursorInterval);
+  }, []);
+
   useEffect(() => {
     const currentFullText = texts[currentText];
-    const typingSpeed = isDeleting ? 50 : 100;
-    const pauseTime = isDeleting ? 500 : 2000;
+    const typingSpeed = isDeleting ? 30 : 80; // Faster typing, smoother deletion
+    const pauseAfterTyping = 3000; // 3 seconds to read the text
+    const pauseBeforeNextWord = 800; // 0.8 seconds before starting next word
 
     if (!isDeleting && displayText === currentFullText) {
-      setTimeout(() => setIsDeleting(true), pauseTime);
-      return;
+      const timeout = setTimeout(() => setIsDeleting(true), pauseAfterTyping);
+      return () => clearTimeout(timeout);
     }
 
     if (isDeleting && displayText === "") {
       setIsDeleting(false);
       setCurrentText((prev) => (prev + 1) % texts.length);
-      return;
+      const timeout = setTimeout(() => {}, pauseBeforeNextWord);
+      return () => clearTimeout(timeout);
     }
 
     const timeout = setTimeout(() => {
@@ -149,13 +161,21 @@ export default function Home() {
               <div className="relative inline-block">
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight">
                   <span className="block text-gray-300">Hi, I&apos;m</span>
-                  <span className="block relative mt-4 min-h-[80px] sm:min-h-[100px] lg:min-h-[120px]">
+                  <span className="block relative mt-4 min-h-[80px] sm:min-h-[100px] lg:min-h-[120px] flex items-center justify-center">
                     {/* Multiple neon glow layers */}
                     <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 blur-3xl opacity-50 animate-pulse"></span>
                     <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 blur-2xl opacity-30 animate-pulse" style={{ animationDelay: '0.3s' }}></span>
-                    <span className="relative bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent [text-shadow:0_0_30px_rgba(139,92,246,0.5)]">
-                      {displayText}
-                      <span className="animate-pulse">|</span>
+                    <span className="relative inline-flex items-center">
+                      <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent [text-shadow:0_0_30px_rgba(139,92,246,0.5)]">
+                        {displayText}
+                      </span>
+                      {/* Sophisticated blinking cursor */}
+                      <span
+                        className={`ml-1 inline-block w-[3px] h-[0.9em] bg-gradient-to-b from-cyan-400 to-purple-400 shadow-[0_0_20px_rgba(34,211,238,0.8)] transition-opacity duration-100 ${showCursor ? 'opacity-100' : 'opacity-0'}`}
+                        style={{
+                          animation: 'cursorPulse 1.5s ease-in-out infinite',
+                        }}
+                      />
                     </span>
                   </span>
                 </h1>
