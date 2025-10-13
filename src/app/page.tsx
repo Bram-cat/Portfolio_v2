@@ -111,23 +111,36 @@ export default function Home() {
               <span className="text-sm font-medium text-cyan-300">Available for opportunities</span>
             </div>
 
-            {/* Enhanced Glitch Text with Neon Effect */}
+            {/* Enhanced Hero Text with Personal Touch */}
             <div className="space-y-6 relative">
+              {/* Name Introduction */}
+              <div className="relative inline-block mb-4">
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-300">
+                  Hi, I&apos;m{" "}
+                  <span className="relative inline-block">
+                    <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 blur-xl opacity-50 animate-pulse"></span>
+                    <span className="relative bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent [text-shadow:0_0_20px_rgba(139,92,246,0.5)]">
+                      Bram
+                    </span>
+                  </span>
+                </h2>
+              </div>
+
               <div className="relative inline-block">
-                <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight">
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight">
                   <span className="block relative">
                     {/* Multiple neon glow layers */}
                     <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 blur-3xl opacity-50 animate-pulse"></span>
                     <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 blur-2xl opacity-30 animate-pulse" style={{ animationDelay: '0.3s' }}></span>
                     <span className="relative bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent [text-shadow:0_0_30px_rgba(139,92,246,0.5)]">
-                      Full Stack
+                      Passionate Developer
                     </span>
                   </span>
                   <span className="block relative mt-2">
                     <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 blur-3xl opacity-50 animate-pulse" style={{ animationDelay: '0.5s' }}></span>
                     <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 blur-2xl opacity-30 animate-pulse" style={{ animationDelay: '0.8s' }}></span>
                     <span className="relative bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent [text-shadow:0_0_30px_rgba(34,211,238,0.5)]">
-                      Developer
+                      & Entrepreneur
                     </span>
                   </span>
                 </h1>
@@ -140,8 +153,7 @@ export default function Home() {
               </div>
 
               <p className="mx-auto max-w-2xl text-lg sm:text-xl text-gray-400 leading-relaxed">
-                <span className="text-cyan-400 font-semibold [text-shadow:0_0_10px_rgba(34,211,238,0.5)]">Passionate entrepreneur</span> building innovative online businesses.
-                Transforming ideas into reality through elegant code and cutting-edge technologies.
+                Building <span className="text-cyan-400 font-semibold [text-shadow:0_0_10px_rgba(34,211,238,0.5)]">innovative online businesses</span> and transforming ideas into reality through elegant code and cutting-edge technologies.
               </p>
             </div>
 
@@ -211,22 +223,22 @@ export default function Home() {
 
           {/* Enhanced Bento Box Grid with Better Proportions */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[280px]">
-            {/* Photo 1 - Portrait (me.jpg) - Takes 1 col, 2 rows */}
-            <Card className="md:col-span-1 md:row-span-2 overflow-hidden border-purple-500/30 hover:border-purple-500 transition-all duration-500 group relative">
+            {/* Profile Picture - Portrait (pfp.png) - Takes 1 col, 2 rows */}
+            <Card className="md:col-span-1 md:row-span-2 overflow-hidden border-purple-500/30 hover:border-purple-500 transition-all duration-500 group relative bg-gradient-to-br from-purple-900/30 to-pink-900/30">
               {/* Neon glow overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
               {/* Pulsing neon border */}
               <div className="absolute inset-0 shadow-[inset_0_0_30px_rgba(168,85,247,0)] group-hover:shadow-[inset_0_0_30px_rgba(168,85,247,0.3)] transition-shadow duration-500 z-10 rounded-lg" />
 
-              <div className="relative h-full w-full">
+              <div className="relative h-full w-full bg-black">
                 <Image
-                  src="/me.jpg"
-                  alt="Bram"
+                  src="/pfp.png"
+                  alt="Bram - Profile"
                   fill
-                  className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                  className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, 25vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
                 {/* Animated neon particles */}
                 <div className="absolute bottom-4 left-4 w-2 h-2 bg-purple-400 rounded-full shadow-[0_0_10px_rgba(168,85,247,0.8)] animate-ping opacity-0 group-hover:opacity-100" />
                 <div className="absolute top-4 right-4 w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(34,211,238,0.8)] animate-ping opacity-0 group-hover:opacity-100" style={{ animationDelay: '0.5s' }} />
@@ -269,42 +281,63 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            {/* Business Focus Card - Takes 2 cols, 1 row */}
-            <Card className="md:col-span-2 md:row-span-1 bg-gradient-to-br from-pink-900/30 to-purple-900/30 border-pink-500/30 hover:border-pink-500 transition-all duration-500 group relative overflow-hidden">
+            {/* Photo 3 - me.jpg - Takes 1 col, 1 row */}
+            <Card className="md:col-span-1 md:row-span-1 overflow-hidden border-pink-500/30 hover:border-pink-500 transition-all duration-500 group relative bg-gradient-to-br from-pink-900/30 to-purple-900/30">
+              {/* Neon glow overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+              {/* Pulsing neon border */}
+              <div className="absolute inset-0 shadow-[inset_0_0_30px_rgba(236,72,153,0)] group-hover:shadow-[inset_0_0_30px_rgba(236,72,153,0.3)] transition-shadow duration-500 z-10 rounded-lg" />
+
+              <div className="relative h-full w-full bg-black">
+                <Image
+                  src="/me.jpg"
+                  alt="Bram"
+                  fill
+                  className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
+                {/* Animated neon particles */}
+                <div className="absolute bottom-4 right-4 w-2 h-2 bg-pink-400 rounded-full shadow-[0_0_10px_rgba(236,72,153,0.8)] animate-ping opacity-0 group-hover:opacity-100" />
+              </div>
+            </Card>
+
+            {/* Business Focus Card - Takes 1 col, 1 row */}
+            <Card className="md:col-span-1 md:row-span-1 bg-gradient-to-br from-purple-900/30 to-cyan-900/30 border-purple-500/30 hover:border-purple-500 transition-all duration-500 group relative overflow-hidden">
               {/* Animated shine effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-[200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
               {/* Neon pulse effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/0 to-purple-500/0 group-hover:from-pink-500/10 group-hover:to-purple-500/10 transition-all duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-cyan-500/0 group-hover:from-purple-500/10 group-hover:to-cyan-500/10 transition-all duration-500" />
 
-              <CardContent className="p-6 h-full flex items-center gap-4 relative z-10">
+              <CardContent className="p-6 h-full flex flex-col items-center justify-center gap-3 relative z-10 text-center">
                 <div className="relative flex-shrink-0">
                   {/* Rotating neon ring */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full blur-xl opacity-50 animate-pulse" />
-                  <div className="absolute inset-[-4px] rounded-full border-2 border-transparent bg-gradient-to-br from-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 group-hover:animate-spin transition-opacity" style={{ animationDuration: '3s' }} />
-                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center group-hover:rotate-[360deg] transition-transform duration-1000 shadow-[0_0_25px_rgba(236,72,153,0.6)]">
-                    <Rocket className="h-8 w-8 text-white" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-full blur-xl opacity-50 animate-pulse" />
+                  <div className="absolute inset-[-4px] rounded-full border-2 border-transparent bg-gradient-to-br from-purple-500 to-cyan-500 opacity-0 group-hover:opacity-100 group-hover:animate-spin transition-opacity" style={{ animationDuration: '3s' }} />
+                  <div className="relative w-14 h-14 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center group-hover:rotate-[360deg] transition-transform duration-1000 shadow-[0_0_25px_rgba(168,85,247,0.6)]">
+                    <Rocket className="h-7 w-7 text-white" />
                   </div>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:to-purple-400 group-hover:bg-clip-text transition-all">
-                    Building Online Businesses
+                <div>
+                  <h3 className="text-lg font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 group-hover:bg-clip-text transition-all">
+                    Building Businesses
                   </h3>
-                  <p className="text-gray-300 text-sm">
-                    Focused on creating scalable SaaS products and digital solutions that solve real problems
+                  <p className="text-gray-300 text-xs leading-relaxed">
+                    Creating scalable SaaS products and digital solutions
                   </p>
                 </div>
               </CardContent>
             </Card>
 
             {/* Photo 2 - Landscape (me2.jpg) - Takes 2 cols, 1 row */}
-            <Card className="md:col-span-2 md:row-span-1 overflow-hidden border-cyan-500/30 hover:border-cyan-500 transition-all duration-500 group relative">
+            <Card className="md:col-span-2 md:row-span-1 overflow-hidden border-cyan-500/30 hover:border-cyan-500 transition-all duration-500 group relative bg-gradient-to-br from-cyan-900/30 to-blue-900/30">
               {/* Neon glow overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
               {/* Animated corner accents */}
               <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-cyan-500/0 group-hover:border-cyan-500/50 transition-all duration-500 z-10 rounded-tl-lg" />
               <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-cyan-500/0 group-hover:border-cyan-500/50 transition-all duration-500 z-10 rounded-br-lg" />
 
-              <div className="relative h-full w-full">
+              <div className="relative h-full w-full bg-black">
                 <Image
                   src="/me2.jpg"
                   alt="Bram"
@@ -312,7 +345,7 @@ export default function Home() {
                   className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70" />
                 {/* Animated scan line effect */}
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/20 to-transparent h-full w-full translate-y-[-100%] group-hover:translate-y-[100%] transition-transform duration-2000 opacity-0 group-hover:opacity-100" />
               </div>
