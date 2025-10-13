@@ -676,7 +676,7 @@ export default function Home() {
                 className="border-2 border-cyan-500/50 text-cyan-300 hover:bg-cyan-500/10 hover:text-white hover:border-cyan-400 transition-all duration-300"
                 asChild
               >
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/brvs-app-developer/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-5 w-5 mr-2" />
                   LinkedIn
                 </a>
@@ -686,7 +686,7 @@ export default function Home() {
                 className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white border-0 shadow-2xl shadow-purple-500/50 hover:shadow-cyan-500/50 transition-all duration-300"
                 asChild
               >
-                <a href="mailto:your.email@example.com">
+                <a href="mailto:vsbharaniram5@gmail.com">
                   <Mail className="h-5 w-5 mr-2" />
                   Send Email
                 </a>
@@ -747,7 +747,7 @@ export default function Home() {
                   <Github className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/brvs-app-developer/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-cyan-400 transition-colors"
@@ -755,7 +755,7 @@ export default function Home() {
                   <Linkedin className="h-5 w-5" />
                 </a>
                 <a
-                  href="mailto:your.email@example.com"
+                  href="mailto:vsbharaniram5@gmail.com"
                   className="text-gray-400 hover:text-pink-400 transition-colors"
                 >
                   <Mail className="h-5 w-5" />
