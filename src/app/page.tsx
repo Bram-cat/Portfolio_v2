@@ -148,30 +148,6 @@ export default function Home() {
               </Button>
             </div>
 
-            {/* Neon Profile Image */}
-            <div className="relative inline-block mt-16">
-              {/* Rotating neon ring */}
-              <div className="absolute inset-0 rounded-full">
-                <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-purple-500 border-r-cyan-500 animate-spin" style={{ animationDuration: '3s' }}></div>
-                <div className="absolute inset-0 rounded-full border-4 border-transparent border-b-pink-500 border-l-blue-500 animate-spin" style={{ animationDuration: '4s', animationDirection: 'reverse' }}></div>
-              </div>
-
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 rounded-full blur-3xl opacity-40 animate-pulse" />
-
-              {/* Profile image */}
-              <div className="relative">
-                <Image
-                  src="/pfp.png"
-                  alt="Profile"
-                  width={240}
-                  height={240}
-                  className="relative rounded-full border-4 border-purple-500/50 shadow-2xl shadow-purple-500/50"
-                  priority
-                />
-              </div>
-            </div>
-
             {/* Floating particles */}
             <div className="absolute top-20 left-10 w-2 h-2 bg-cyan-400 rounded-full animate-ping"></div>
             <div className="absolute top-40 right-20 w-2 h-2 bg-purple-400 rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
@@ -187,13 +163,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section with Bento Box */}
-      <section id="about" className="py-20 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* About Section with Enhanced Bento Box */}
+      <section id="about" className="py-20 relative overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4 border-purple-500/50 text-purple-300">About Me</Badge>
+            <Badge variant="outline" className="mb-4 border-purple-500/50 text-purple-300 animate-pulse">About Me</Badge>
             <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent animate-pulse">
                 Entrepreneur & Developer
               </span>
             </h2>
@@ -202,77 +184,83 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Bento Box Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
-            {/* Large card - About */}
-            <Card className="md:col-span-2 md:row-span-2 bg-gradient-to-br from-purple-900/20 to-cyan-900/20 border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 group">
-              <CardContent className="p-8 h-full flex flex-col justify-center">
-                <Sparkles className="h-12 w-12 text-purple-400 mb-4 group-hover:rotate-12 transition-transform" />
-                <h3 className="text-2xl font-bold text-white mb-4">Building The Future</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  I&apos;m a passionate entrepreneur and full-stack developer focused on creating innovative online businesses.
-                  From AI-powered applications to intuitive web platforms, I transform ideas into reality through elegant code
-                  and cutting-edge technologies. Currently studying Computer Science at UPEI while building the next generation
-                  of digital products.
-                </p>
+          {/* Enhanced Bento Box Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
+            {/* Large About Card */}
+            <Card className="md:col-span-4 md:row-span-2 bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-cyan-900/20 border-purple-500/30 hover:border-purple-500 transition-all duration-500 group relative overflow-hidden">
+              {/* Animated gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 via-pink-500/5 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <CardContent className="p-8 h-full flex flex-col justify-center relative z-10">
+                <div className="flex items-start gap-4">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity" />
+                    <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                      <Sparkles className="h-8 w-8 text-white animate-pulse" />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-3xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 group-hover:bg-clip-text transition-all">
+                      Building The Future
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed text-lg">
+                      I&apos;m a passionate entrepreneur and full-stack developer focused on creating innovative online businesses.
+                      From AI-powered applications to intuitive web platforms, I transform ideas into reality through elegant code
+                      and cutting-edge technologies. Currently studying Computer Science at UPEI while building the next generation
+                      of digital products.
+                    </p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
-            {/* Photo 1 */}
-            <Card className="md:col-span-1 md:row-span-1 overflow-hidden border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 group">
-              <div className="relative h-64 md:h-full">
+            {/* Photo 1 - Adjusted aspect ratio */}
+            <Card className="md:col-span-2 md:row-span-2 overflow-hidden border-purple-500/30 hover:border-purple-500 transition-all duration-500 group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+              <div className="relative h-96 md:h-full">
                 <Image
                   src="/me.jpg"
-                  alt="Me"
+                  alt="Bram"
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60" />
+                {/* Neon border effect */}
+                <div className="absolute inset-0 border-2 border-purple-500/0 group-hover:border-purple-500/50 rounded-lg transition-all duration-500" />
               </div>
             </Card>
 
-            {/* Photo 2 */}
-            <Card className="md:col-span-1 md:row-span-1 overflow-hidden border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 group">
-              <div className="relative h-64 md:h-full">
+            {/* Photo 2 - Adjusted aspect ratio */}
+            <Card className="md:col-span-3 md:row-span-1 overflow-hidden border-cyan-500/30 hover:border-cyan-500 transition-all duration-500 group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+              <div className="relative h-64">
                 <Image
                   src="/me2.jpg"
-                  alt="Me"
+                  alt="Bram"
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60" />
+                {/* Neon border effect */}
+                <div className="absolute inset-0 border-2 border-cyan-500/0 group-hover:border-cyan-500/50 rounded-lg transition-all duration-500" />
               </div>
             </Card>
 
-            {/* Tech Stack */}
-            <Card className="md:col-span-2 bg-gradient-to-br from-cyan-900/20 to-purple-900/20 border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-white flex items-center gap-2">
-                  <Code2 className="h-5 w-5 text-cyan-400" />
-                  Tech Stack
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {["React Native", "Next.js", "TypeScript", "Supabase", "Clerk", "Stripe", "Tailwind CSS", "AI/ML"].map((tech) => (
-                    <Badge
-                      key={tech}
-                      className="bg-purple-500/10 text-purple-300 border-purple-500/30 hover:bg-purple-500/20 transition-colors"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+            {/* Business Focus Card */}
+            <Card className="md:col-span-3 bg-gradient-to-br from-pink-900/30 to-purple-900/30 border-pink-500/30 hover:border-pink-500 transition-all duration-500 group relative overflow-hidden">
+              {/* Animated shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
 
-            {/* Stats or Focus */}
-            <Card className="md:col-span-2 bg-gradient-to-br from-pink-900/20 to-purple-900/20 border-pink-500/20 hover:border-pink-500/50 transition-all duration-300 group">
-              <CardContent className="p-6 flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center flex-shrink-0 group-hover:rotate-180 transition-transform duration-500">
-                  <Rocket className="h-8 w-8 text-white" />
+              <CardContent className="p-6 flex items-center gap-4 relative z-10">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full blur-xl opacity-50 animate-pulse" />
+                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center group-hover:rotate-[360deg] transition-transform duration-1000">
+                    <Rocket className="h-8 w-8 text-white" />
+                  </div>
                 </div>
-                <div>
+                <div className="flex-1">
                   <h3 className="text-xl font-bold text-white mb-1">Building Online Businesses</h3>
                   <p className="text-gray-300 text-sm">
                     Focused on creating scalable SaaS products and digital solutions that solve real problems
@@ -303,47 +291,59 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* VisualAIze - AI Vision Board Generator */}
+            {/* VisualAIze (Dreamboard) - AI Vision Board Generator */}
             <Card className="group relative bg-gray-900/50 border-purple-500/30 hover:border-purple-500 backdrop-blur-sm hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
               {/* Animated gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 via-pink-500/5 to-purple-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
+              {/* Animated shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-400/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+
               <CardHeader className="relative z-10">
                 <div className="flex items-start justify-between mb-4">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl blur-md opacity-50 group-hover:opacity-100 transition-opacity" />
-                    <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                      <Sparkles className="h-6 w-6 text-white group-hover:rotate-12 transition-transform" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl blur-md opacity-50 group-hover:opacity-100 transition-opacity animate-pulse" />
+                    <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center group-hover:rotate-[360deg] transition-transform duration-700">
+                      <Sparkles className="h-6 w-6 text-white" />
                     </div>
                   </div>
-                  <Badge className="bg-purple-500/20 text-purple-300 border-purple-500/30">
-                    AI Powered
-                  </Badge>
+                  <div className="flex flex-col gap-2">
+                    <Badge className="bg-purple-500/20 text-purple-300 border-purple-500/30 animate-pulse">
+                      AI Powered
+                    </Badge>
+                    <Badge className="bg-yellow-500/20 text-yellow-300 border-yellow-500/30">
+                      In Progress
+                    </Badge>
+                  </div>
                 </div>
-                <CardTitle className="text-2xl text-white">VisualAIze</CardTitle>
+                <CardTitle className="text-2xl text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all">
+                  VisualAIze
+                </CardTitle>
                 <CardDescription className="text-gray-400">AI Vision Board Generator</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4 relative z-10">
                 <p className="text-gray-300">
                   An innovative AI-powered application that transforms keywords and user images into personalized
-                  vision boards, helping users visualize and manifest their goals.
+                  vision boards, helping users visualize and manifest their goals through intelligent image generation.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {["Next.js", "AI/ML", "TypeScript", "Tailwind CSS"].map((tech) => (
-                    <Badge key={tech} className="bg-purple-500/10 text-purple-300 border-purple-500/30">
+                    <Badge key={tech} className="bg-purple-500/10 text-purple-300 border-purple-500/30 hover:bg-purple-500/20 transition-colors">
                       {tech}
                     </Badge>
                   ))}
                 </div>
               </CardContent>
               <CardFooter className="flex gap-2 relative z-10">
-                <Button size="sm" variant="outline" className="flex-1 border-purple-500/30 text-purple-300 hover:bg-purple-500/10">
-                  <Github className="h-4 w-4 mr-2" />
-                  Code
+                <Button size="sm" variant="outline" className="flex-1 border-purple-500/30 text-purple-300 hover:bg-purple-500/10 hover:border-purple-500 transition-all" asChild>
+                  <a href="https://github.com/Bram-cat/Dreamboard" target="_blank" rel="noopener noreferrer">
+                    <Github className="h-4 w-4 mr-2" />
+                    View Code
+                  </a>
                 </Button>
-                <Button size="sm" className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 shadow-lg shadow-purple-500/50">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  Demo
+                <Button size="sm" className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 shadow-lg shadow-purple-500/50 hover:shadow-pink-500/50 transition-all" disabled>
+                  <Terminal className="h-4 w-4 mr-2" />
+                  Coming Soon
                 </Button>
               </CardFooter>
             </Card>
