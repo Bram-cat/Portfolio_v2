@@ -1,20 +1,32 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const supreme = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Supreme-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Supreme-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Supreme-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-supreme",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio - Computer Science Student",
-  description: "Portfolio website showcasing projects and experience as a Full Stack Developer pursuing Bachelor's in Computer Science at UPEI",
+  title: "Ram - Portfolio",
+  description: "Full Stack Developer & Entrepreneur building innovative online businesses with cutting-edge technologies",
 };
 
 export default function RootLayout({
@@ -25,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${supreme.variable} antialiased font-sans`}
       >
         {children}
       </body>
