@@ -308,141 +308,68 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Client Work Section */}
+      {/* My Company Section */}
       <section id="work" className="py-20 px-6 bg-white/[0.02]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 text-center">
             <Badge variant="outline" className="border-white/20 text-white/70 uppercase text-xs tracking-wider mb-4">
-              Client Work
+              My Company
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Trusted by businesses across PEI</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">PEI Web Agency</h2>
             <p className="text-white/60 max-w-2xl mx-auto">
-              Building professional websites and digital solutions for local businesses
+              Building professional websites and digital solutions for businesses across Prince Edward Island
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 mb-8">
-            {/* Construction Website - Large Featured */}
-            <Card className="lg:col-span-2 bg-gradient-to-br from-blue-900/20 via-blue-800/10 to-transparent border-white/10 hover:border-blue-500/30 transition-all duration-500 group overflow-hidden hover:scale-[1.02]">
-              <div className="grid lg:grid-cols-2 gap-6">
-                <div className="aspect-video lg:aspect-auto relative overflow-hidden">
-                  <Image
-                    src="/construction.png"
-                    alt="BernMar Construction"
-                    fill
-                    className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
-                </div>
-                <div className="p-6 lg:p-8 flex flex-col justify-center">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">
-                      Featured
-                    </Badge>
-                    <Badge variant="outline" className="border-white/20 text-white/60">
-                      Construction
-                    </Badge>
-                  </div>
-                  <CardTitle className="text-3xl text-white mb-3 group-hover:text-blue-300 transition-colors">BernMar Construction</CardTitle>
-                  <CardDescription className="text-white/60 text-lg mb-4">
-                    Professional construction services website
-                  </CardDescription>
-                  <p className="text-white/70 leading-relaxed mb-6">
-                    A modern, professional website showcasing construction services across Prince Edward Island. Features comprehensive service pages, integrated quote request system, responsive design optimized for all devices, and SEO-optimized content.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {["Next.js", "Tailwind CSS", "Responsive Design", "SEO"].map((tech) => (
-                      <Badge key={tech} variant="outline" className="border-blue-500/30 text-blue-300 bg-blue-500/10">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                  <Button variant="ghost" className="w-fit text-blue-300 hover:text-blue-200 hover:bg-blue-500/10 group/btn">
-                    View Project
-                    <ExternalLink className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </Button>
-                </div>
-              </div>
-            </Card>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Stogies Website */}
-            <Card className="bg-gradient-to-br from-gray-900/40 via-gray-800/20 to-transparent border-white/10 hover:border-white/30 transition-all duration-500 group overflow-hidden hover:scale-105">
-              <div className="aspect-video relative overflow-hidden">
+          {/* Featured Company Card */}
+          <Card className="bg-gradient-to-br from-blue-900/20 via-purple-800/10 to-transparent border-white/10 hover:border-blue-500/30 transition-all duration-500 group overflow-hidden hover:scale-[1.02]">
+            <div className="grid lg:grid-cols-2 gap-6">
+              <div className="aspect-video lg:aspect-auto relative overflow-hidden min-h-[300px]">
                 <Image
-                  src="/stogies.png"
-                  alt="Stogies Charlottetown"
+                  src="/hero.png"
+                  alt="PEI Web Agency"
                   fill
-                  className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
               </div>
-              <CardHeader>
-                <div className="flex items-center justify-between mb-2">
-                  <CardTitle className="text-2xl text-white group-hover:text-white transition-colors">Stogies Charlottetown</CardTitle>
-                  <Badge className="bg-white/10 text-white border-white/20">
-                    Retail
+              <div className="p-6 lg:p-8 flex flex-col justify-center">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-xl overflow-hidden border border-white/20">
+                    <Image
+                      src="/logo.png"
+                      alt="PEI Web Agency Logo"
+                      width={48}
+                      height={48}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <Badge className="bg-green-500/20 text-green-300 border-green-500/30">
+                    My Freelancing Company
                   </Badge>
                 </div>
-                <CardDescription className="text-white/60">
-                  Premium tobacco & vape products
+                <CardTitle className="text-3xl text-white mb-3 group-hover:text-blue-300 transition-colors">PEI Web Agency</CardTitle>
+                <CardDescription className="text-white/60 text-lg mb-4">
+                  Professional Web Development Services in PEI
                 </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-white/70 text-sm leading-relaxed">
-                  Sleek, modern website for a premium tobacco shop in Charlottetown. Clean design with product showcase and location information.
+                <p className="text-white/70 leading-relaxed mb-6">
+                  I founded PEI Web Agency to help local businesses establish their online presence. We specialize in creating modern, responsive websites, e-commerce solutions, and custom web applications tailored to each client&apos;s unique needs.
                 </p>
-                <div className="flex items-center justify-between pt-2">
-                  <div className="flex gap-2">
-                    <Badge variant="outline" className="border-white/20 text-white/60 text-xs">React</Badge>
-                    <Badge variant="outline" className="border-white/20 text-white/60 text-xs">Tailwind</Badge>
-                  </div>
-                  <Button size="sm" variant="ghost" className="text-white/60 hover:text-white hover:bg-white/10">
-                    <ExternalLink className="h-4 w-4" />
-                  </Button>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {["Web Design", "E-Commerce", "SEO", "Custom Development", "Hosting"].map((service) => (
+                    <Badge key={service} variant="outline" className="border-blue-500/30 text-blue-300 bg-blue-500/10">
+                      {service}
+                    </Badge>
+                  ))}
                 </div>
-              </CardContent>
-            </Card>
-
-            {/* Washly Website */}
-            <Card className="bg-gradient-to-br from-blue-600/20 via-blue-500/10 to-transparent border-white/10 hover:border-blue-500/30 transition-all duration-500 group overflow-hidden hover:scale-105">
-              <div className="aspect-video relative overflow-hidden">
-                <Image
-                  src="/washly.png"
-                  alt="Washly Washing Services"
-                  fill
-                  className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+                <Button className="w-fit bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300" asChild>
+                  <a href="https://peiwebagency.xyz" target="_blank" rel="noopener noreferrer">
+                    Visit Website
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
               </div>
-              <CardHeader>
-                <div className="flex items-center justify-between mb-2">
-                  <CardTitle className="text-2xl text-white group-hover:text-blue-300 transition-colors">Washly Services</CardTitle>
-                  <Badge className="bg-yellow-500/20 text-yellow-300 border-yellow-500/30">
-                    Services
-                  </Badge>
-                </div>
-                <CardDescription className="text-white/60">
-                  Professional cleaning services
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-white/70 text-sm leading-relaxed">
-                  Professional washing and cleaning services website. Features service listings, quote system, and customer testimonials with vibrant design.
-                </p>
-                <div className="flex items-center justify-between pt-2">
-                  <div className="flex gap-2">
-                    <Badge variant="outline" className="border-white/20 text-white/60 text-xs">Next.js</Badge>
-                    <Badge variant="outline" className="border-white/20 text-white/60 text-xs">Tailwind</Badge>
-                  </div>
-                  <Button size="sm" variant="ghost" className="text-blue-300 hover:text-blue-200 hover:bg-blue-500/10">
-                    <ExternalLink className="h-4 w-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+            </div>
+          </Card>
         </div>
       </section>
 
@@ -555,28 +482,28 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            {/* Fadez Barbershop Project */}
+            {/* Vision Board Project */}
             <Card className="bg-gradient-to-br from-cyan-500/10 via-blue-500/5 to-transparent border-white/10 hover:border-cyan-500/30 transition-all duration-500 group hover:scale-105">
               <CardHeader>
                 <div className="flex items-start justify-between mb-4">
                   <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-cyan-500/30 group-hover:border-cyan-500/50 transition-all">
-                    <Image src="/fadezlogo.png" alt="Fadez" width={64} height={64} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <Image src="/visionboard.png" alt="Vision Board" width={64} height={64} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
                   <Badge className="bg-cyan-500/20 text-cyan-300 border-cyan-500/30">
-                    Local Business
+                    Productivity
                   </Badge>
                 </div>
-                <CardTitle className="text-2xl text-white mb-2 group-hover:text-cyan-300 transition-colors">Fadez Barbershop</CardTitle>
+                <CardTitle className="text-2xl text-white mb-2 group-hover:text-cyan-300 transition-colors">Vision Board Creator</CardTitle>
                 <CardDescription className="text-white/60">
-                  Modern Business Website
+                  Goal Visualization Tool
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-white/70 leading-relaxed">
-                  Performance-optimized website for a local barbershop. Features smooth animations, stunning visuals, and modern design bringing traditional business online.
+                  A creative tool for building digital vision boards to visualize goals and aspirations. Drag-and-drop interface with customizable layouts and inspiring templates.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {["Vite", "React", "Tailwind", "Framer Motion"].map((tech) => (
+                  {["Next.js", "React", "Tailwind", "Canvas API"].map((tech) => (
                     <Badge key={tech} variant="outline" className="border-cyan-500/30 text-cyan-300 bg-cyan-500/10 text-xs hover:bg-cyan-500/20 transition-all">
                       {tech}
                     </Badge>
@@ -588,7 +515,7 @@ export default function Home() {
                   className="w-full border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/10 transition-all duration-300"
                   asChild
                 >
-                  <a href="https://github.com/Bram-cat/fadez-new1" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/Bram-cat/Dreamboard" target="_blank" rel="noopener noreferrer">
                     <Github className="h-4 w-4 mr-2" />
                     View on GitHub
                   </a>
