@@ -544,7 +544,7 @@ export default function Home() {
               architecture, and creative solutions
             </p>
           </div>
-
+          {/* Projects */}
           <div className="grid lg:grid-cols-2 gap-8">
             {/* VisualAIze Project */}
 
